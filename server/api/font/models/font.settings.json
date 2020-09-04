@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fonts",
+  "info": {
+    "name": "font"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "font_name": {
+      "type": "string"
+    },
+    "web_font": {
+      "type": "string"
+    },
+    "font_weights": {
+      "type": "string"
+    },
+    "font_description": {
+      "type": "richtext"
+    }
+  }
+}
