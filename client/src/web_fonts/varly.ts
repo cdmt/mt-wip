@@ -3,10 +3,10 @@ import VarlyRg from './Varly/varly.woff'
 
 export const Varly = `
     @font-face {
-        font-family: 'Hedley';
+        font-family: 'Varly';
         font-style: normal;
         font-weight: 300;
-        src: local('Hedley'), local('Hedley'), 
+        src: local('Varly'), local('Varly'), 
         url(${VarlyRg}) format('truetype')
     }
 `
