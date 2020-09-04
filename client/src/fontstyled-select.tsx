@@ -8,7 +8,12 @@ const Font = styled.div<{font: string, fweight: string, fstyle?:string, fsize?:s
     font-size: ${props => props.fsize}
 ` 
 
-export const FontContainerSelect:React.FC = () => {
+interface IProps{
+    ffont: string
+    fweights: string
+}
+
+export const FontContainerSelect:React.FC<IProps> = ({ffont, fweights}) => {
 
     const [fweight, setFweight] = useState<string>('400')
     const [fstyled, setFstyle] = useState<string>('normal')
@@ -20,9 +25,10 @@ export const FontContainerSelect:React.FC = () => {
 
     return(
         <div>
-            <Font font='AlwynRd' fweight={fweight} fsize={'3em'} fstyle={fstyled}>
+            <Font font={ffont} fweight={fweight} fsize={'3em'} fstyle={fstyled}>
                 Fonts Test with select
             </Font>
+            
             <select className='select-block' 
                 onChange={e => setFontDetails(e.target.value, e.target[e.target.selectedIndex].getAttribute('data-it')?? '')}>    
                 <option value={'300'} data-it={'normal'}>Light</option>

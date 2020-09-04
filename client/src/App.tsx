@@ -33,7 +33,7 @@ const App:React.FC = () => {
         data && data.fonts && data.fonts.map(font => (
           <FontBlock>
             <h3>{font?.font_name}</h3>
-            <FontContainerSelect/>
+            <FontContainerSelect ffont={font?.web_font!} fweights={font?.font_weights!} />
           </FontBlock>
         ))
 

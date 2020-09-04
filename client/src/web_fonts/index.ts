@@ -12,6 +12,7 @@ import { Hedley } from "./hedley";
 import { Hyla } from "./hyla";
 import { Mic32 } from "./mic32";
 import { Mic32Rd } from "./mic32rd";
+import { Mic32St } from "./mic32st";
 import { Rehn } from "./rehn";
 import { RehnCon } from "./rehncon";
 import { Varly } from "./varly";
@@ -29,6 +30,7 @@ export const GlobalFonts = createGlobalStyle`
   ${Hyla}
   ${Mic32}
   ${Mic32Rd}
+  ${Mic32St}
   ${Rehn}
   ${RehnCon}
   ${Varly}
