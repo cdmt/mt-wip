@@ -5,6 +5,7 @@ export const WeightVal: { [unit: string]: string } =  {
     Regular: '400',
     Medium: '500',
     Bold: '700',
+    ExtraBold: '800',
     Black: '900',
     ThinItalic: '100',
     ExtraLightItalic: '200',
@@ -12,6 +13,7 @@ export const WeightVal: { [unit: string]: string } =  {
     Italic: '400',
     MediumItalic: '500',
     BoldItalic: '700',
+    ExtraBoldItalic: '800',
     BlackItalic: '900'
 }
 
@@ -22,6 +24,7 @@ export const StyleVal: { [unit: string]: string } = {
     Regular: 'normal',
     Medium: 'normal',
     Bold: 'normal',
+    ExtraBold: 'normal',
     Black: 'normal',
     ThinItalic: 'italic',
     ExtraLightItalic: 'italic',
@@ -29,5 +32,6 @@ export const StyleVal: { [unit: string]: string } = {
     Italic: 'italic',
     MediumItalic: 'italic',
     BoldItalic: 'italic',
+    ExtraBoldItalic: 'italic',
     BlackItalic: 'italic'
 }
