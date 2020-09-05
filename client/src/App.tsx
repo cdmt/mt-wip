@@ -8,6 +8,11 @@ import { GET_ALL_FONTS } from "./queries";
 
 import { GlobalFonts } from './web_fonts';
 
+const PageWrap = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+`
+
 const FontBlock = styled.div`
   margin: 10px 0;
   padding: 10px 0;
@@ -16,6 +21,13 @@ const FontBlock = styled.div`
   h3{
     margin: 0;
   }
+
+  flex: 0 0 50%;
+`
+
+const FontsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `
 
 const App:React.FC = () => {
@@ -26,9 +38,10 @@ const App:React.FC = () => {
 
   return (
     <div className="App">
+      <PageWrap>
       <GlobalFonts />
       <h1>MT Fonts</h1>
-
+      <FontsContainer>
       {
         data && data.fonts && data.fonts.map(font => (
           <FontBlock>
@@ -38,7 +51,8 @@ const App:React.FC = () => {
         ))
 
       }
-
+      </FontsContainer>
+      </PageWrap>
     </div>
   );
 }

@@ -8,7 +8,8 @@ const Font = styled.div<{font: string, fweight: string, fstyle?:string, fsize?:s
     font-family: ${props => props.font};
     font-weight: ${props => props.fweight};
     font-style: ${props => props.fstyle};
-    font-size: ${props => props.fsize}
+    font-size: ${props => props.fsize};
+    min-height: 59px;
 ` 
 
 interface IProps{
@@ -32,15 +33,20 @@ export const FontContainerSelect:React.FC<IProps> = ({ffont, fweights}) => {
                 Fonts Test with select
             </Font>
             
-            <select onChange={e => setFontDetails(e.target.value, e.target[e.target.selectedIndex].getAttribute('data-it')?? '')}>
+            {/* <select onChange={e => setFontDetails(e.target.value, e.target[e.target.selectedIndex].getAttribute('data-it')?? '')}>
             {
-                fweights?.split(',').map((weight: any) => {
-                  return(
-                    <option value={WeightVal[weight.replace(/ /g,'')]} data-it={StyleVal[weight.replace(/ /g,'')]} >{weight}</option>
-                  )
+                fweights?.split(',').map((weight:string) => {
+                    return(
+                        <option 
+                            value={WeightVal[weight.replace(/ /g,'')]} 
+                            data-it={StyleVal[weight.replace(/ /g,'')]} 
+                        >
+                            {weight}
+                        </option>
+                    )
                 })
               }
-            </select>
+            </select> */}
 
         </div>
     )
