@@ -14,6 +14,8 @@ export interface FontData_fonts {
   font_weights: string | null;
   font_description: string | null;
   web_font: string | null;
+  weights_number: string | null;
+  styles_number: string | null;
 }
 
 export interface FontData {

@@ -20,6 +20,12 @@
     },
     "font_description": {
       "type": "richtext"
+    },
+    "weights_number": {
+      "type": "string"
+    },
+    "styles_number": {
+      "type": "string"
     }
   }
 }

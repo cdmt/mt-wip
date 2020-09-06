@@ -8,6 +8,8 @@ export const GET_ALL_FONTS = gql`
             font_weights
             font_description
             web_font
+            weights_number
+            styles_number
           }
     }
 ` 

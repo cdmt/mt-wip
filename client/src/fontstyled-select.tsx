@@ -37,7 +37,9 @@ export const FontContainerSelect:React.FC<IProps> = ({ffont, mtWeights}) => {
             <Font font={ffont} fweight={WeightVal[fweights[ranNum].replace(/ /g,'')]} fsize={'3em'} fstyle={StyleVal[fweights[ranNum].replace(/ /g,'')]}>
                 Fonts Test with select
             </Font>
-
+            <div>
+                {fweights[ranNum]}
+            </div>
         </div>
     )
 }

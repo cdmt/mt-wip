@@ -30,6 +30,14 @@ const FontBlock = styled.div`
     flex: 0 0 50%;
   }
 
+  .font-info{
+    display: flex;
+    align-items: baseline;
+    span{
+      margin-left: 5px;
+    }
+  }
+
 `
 
 const FontsContainer = styled.div`
@@ -53,7 +61,15 @@ const App:React.FC = () => {
         data && data.fonts && data.fonts.map(font => (
           // const fontsArr:array = font?.font_weights!.split(',')
           <FontBlock>
-            <h3>{font?.font_name}</h3>
+            <div className="font-info">
+              <h3>{font?.font_name}</h3>
+              <span>
+                {font?.weights_number} weights
+              </span>
+              <span>
+                {font?.styles_number} styles
+              </span>
+            </div>
             <FontContainerSelect ffont={font?.web_font!} mtWeights={font?.font_weights!} />
           </FontBlock>
         ))
