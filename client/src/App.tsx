@@ -8,21 +8,28 @@ import { GET_ALL_FONTS } from "./queries";
 
 import { GlobalFonts } from './web_fonts';
 
+const breakpoint = '700px';
+
 const PageWrap = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `
 
 const FontBlock = styled.div`
+
+  border-bottom: 1px solid #ddd;
   margin: 10px 0;
   padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+  width: 100%;
 
   h3{
     margin: 0;
   }
 
-  flex: 0 0 50%;
+  @media(min-width: ${breakpoint}){
+    flex: 0 0 50%;
+  }
+
 `
 
 const FontsContainer = styled.div`
