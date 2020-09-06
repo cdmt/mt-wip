@@ -51,9 +51,10 @@ const App:React.FC = () => {
       <FontsContainer>
       {
         data && data.fonts && data.fonts.map(font => (
+          // const fontsArr:array = font?.font_weights!.split(',')
           <FontBlock>
             <h3>{font?.font_name}</h3>
-            <FontContainerSelect ffont={font?.web_font!} fweights={font?.font_weights!} />
+            <FontContainerSelect ffont={font?.web_font!} mtWeights={font?.font_weights!} />
           </FontBlock>
         ))
 
