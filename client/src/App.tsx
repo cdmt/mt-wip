@@ -16,10 +16,7 @@ const PageWrap = styled.div`
 `
 
 const FontBlock = styled.div`
-
   border-bottom: 1px solid #ddd;
-  margin: 10px 0;
-  padding: 10px 0;
   width: 100%;
 
   h3{
@@ -38,12 +35,21 @@ const FontBlock = styled.div`
     }
   }
 
+  &:hover{
+    background: pink;
+  }
+
 `
 
 const FontsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
+
+const FontBlockContents = styled.div`
+  padding: 10px;
+`
+
 
 const App:React.FC = () => {
 
@@ -61,16 +67,18 @@ const App:React.FC = () => {
         data && data.fonts && data.fonts.map(font => (
           // const fontsArr:array = font?.font_weights!.split(',')
           <FontBlock>
-            <div className="font-info">
-              <h3>{font?.font_name}</h3>
-              <span>
-                {font?.weights_number} weights
-              </span>
-              <span>
-                {font?.styles_number} styles
-              </span>
-            </div>
-            <FontContainerSelect ffont={font?.web_font!} mtWeights={font?.font_weights!} />
+            <FontBlockContents>
+              <div className="font-info">
+                <h3>{font?.font_name}</h3>
+                <span>
+                  {font?.weights_number} weights
+                </span>
+                <span>
+                  {font?.styles_number} styles
+                </span>
+              </div>
+              <FontContainerSelect ffont={font?.web_font!} mtWeights={font?.font_weights!}/>
+            </FontBlockContents>
           </FontBlock>
         ))
 
