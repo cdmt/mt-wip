@@ -1,5 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import styled from 'styled-components';
+
 import { FontContainerSelect } from './fontstyled-select'
 
 import { useQuery } from "@apollo/react-hooks";
@@ -16,10 +18,7 @@ const PageWrap = styled.div`
 `
 
 const FontBlock = styled.div`
-
   border-bottom: 1px solid #ddd;
-  margin: 10px 0;
-  padding: 10px 0;
   width: 100%;
 
   h3{
@@ -30,12 +29,29 @@ const FontBlock = styled.div`
     flex: 0 0 50%;
   }
 
+  .font-info{
+    display: flex;
+    align-items: baseline;
+    span{
+      margin-left: 5px;
+    }
+  }
+
+  &:hover{
+    background: pink;
+  }
+
 `
 
 const FontsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
+
+const FontBlockContents = styled.div`
+  padding: 10px;
+`
+
 
 const App:React.FC = () => {
 
@@ -47,14 +63,26 @@ const App:React.FC = () => {
     <div className="App">
       <PageWrap>
       <GlobalFonts />
-      <h1>MT Fonts</h1>
       <FontsContainer>
       {
         data && data.fonts && data.fonts.map(font => (
-          <FontBlock>
-            <h3>{font?.font_name}</h3>
-            <FontContainerSelect ffont={font?.web_font!} fweights={font?.font_weights!} />
-          </FontBlock>
+          // const fontsArr:array = font?.font_weights!.split(',')
+          <Link to="FontDisplay">
+            <FontBlock>
+              <FontBlockContents>
+                <div className="font-info">
+                  <h3>{font?.font_name}</h3>
+                  <span>
+                    {font?.weights_number} weights
+                  </span>
+                  <span>
+                    {font?.styles_number} styles
+                  </span>
+                </div>
+                <FontContainerSelect ffont={font?.web_font!} mtWeights={font?.font_weights!}/>
+              </FontBlockContents>
+            </FontBlock>
+          </Link>
         ))
 
       }

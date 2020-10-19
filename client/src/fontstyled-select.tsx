@@ -14,12 +14,12 @@ const Font = styled.div<{font: string, fweight: string, fstyle?:string, fsize?:s
 
 interface IProps{
     ffont: string
-    fweights: string
+    mtWeights: string
 }
 
-export const FontContainerSelect:React.FC<IProps> = ({ffont, fweights}) => {
+export const FontContainerSelect:React.FC<IProps> = ({ffont, mtWeights}) => {
 
-    const [fweight, setFweight] = useState<string>('400')
+    const [fweight, setFweight] = useState<string>('')
     const [fstyled, setFstyle] = useState<string>('normal')
 
     const setFontDetails = (value:string, fitalic:string) => {
@@ -27,27 +27,19 @@ export const FontContainerSelect:React.FC<IProps> = ({ffont, fweights}) => {
         setFstyle(fitalic)
     }
 
+    const fweights = mtWeights.split(',');
+    const ranNum = Math.floor(Math.random()*fweights.length)
+    // setFweight(WeightVal[fweights[ranNum].replace(/ /g,'')])
+    // setFstyle(StyleVal[fweights[ranNum].replace(/ /g,'')])
+
     return(
         <div>
-            <Font font={ffont} fweight={fweight} fsize={'3em'} fstyle={fstyled}>
+            <Font font={ffont} fweight={WeightVal[fweights[ranNum].replace(/ /g,'')]} fsize={'3em'} fstyle={StyleVal[fweights[ranNum].replace(/ /g,'')]}>
                 Fonts Test with select
             </Font>
-            
-            {/* <select onChange={e => setFontDetails(e.target.value, e.target[e.target.selectedIndex].getAttribute('data-it')?? '')}>
-            {
-                fweights?.split(',').map((weight:string) => {
-                    return(
-                        <option 
-                            value={WeightVal[weight.replace(/ /g,'')]} 
-                            data-it={StyleVal[weight.replace(/ /g,'')]} 
-                        >
-                            {weight}
-                        </option>
-                    )
-                })
-              }
-            </select> */}
-
+            <div>
+                {fweights[ranNum]}
+            </div>
         </div>
     )
 }
